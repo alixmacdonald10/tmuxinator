@@ -1,0 +1,17 @@
+# /home/amac/.config/tmuxinator/rust-dev.yml
+
+name: rust-dev
+root: <%= ENV['PWD'] %>
+
+startup_window: development 
+startup_pane: 1
+
+windows:
+  - development:
+      layout: main-vertical
+      panes:
+        - editor:
+          - nvim
+        - watcher:
+          - bacon clippy
+  - builder: cargo build
